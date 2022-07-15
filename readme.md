@@ -11,7 +11,7 @@ Repositório com meus estudos sobre JavaScript.
 | [FrontEnd Roadmap](https://roadmap.sh/frontend) |
 | [Exercism](https://exercism.org/tracks/javascript/concepts) | [Meu perfil](https://exercism.org/profiles/isa56) |
 | [freeCodeCamp JS](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/) |
-| [Livro Eloquente JavaScript](https://github.com/braziljs/eloquente-javascript) | [Pasta com exercícios]() |
+| [Livro Eloquente JavaScript](https://github.com/braziljs/eloquente-javascript) | [Pasta com exercícios](/eloquente-javascript/) |
 
 <!-- | []() | -->
 
