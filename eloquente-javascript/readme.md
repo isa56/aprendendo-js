@@ -1,13 +1,14 @@
 # Eloquente JavaScript
 
 [O livro.](https://github.com/braziljs/eloquente-javascript/)
+[O site.](https://eloquentjavascript.net/)
 
 ## Capítulos:
 
 0. [X] Parte 0: Introdução
-2. [] Parte 1: A Linguagem 
+2. [] [Parte 1: A Linguagem](/eloquente-javascript/parte-1-intro/)
    1. [X] Valores, Tipos e Operadores
-   2. [] Estrutura do Programa
+   2. [X] Estrutura do Programa
    3. [] Funções
    4. [] Estrutura de Dados: Objeto e Array
    5. [] Funções de Ordem Superior
@@ -17,7 +18,7 @@
    9.  [] Expressões Regulares
    10. [] Módulos 
    11. Prática: A Linguagem de Programação
-3. [] Parte 2: Navegador
+3. [] [Parte 2: Navegador](/eloquente-javascript/parte-2-browser/)
    1. [] JavaScript e o Navegador
    2. [] O Document Object Model
    3. [] Manipulando Eventos
@@ -26,6 +27,6 @@
    6. [] HTTP
    7. [] Formulários e Campos de Formulários
    8. [] Projeto: Um Programa de Pintura
-4. [] Parte 3: Node.js
+4. [] [Parte 3: Node.js](/eloquente-javascript/parte-3-nodejs/)
    1. [] Node.js
    2. Projeto: Website de Compartilhamento de Habilidades
