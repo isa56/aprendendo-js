@@ -44,6 +44,7 @@ console.log(valorA, valorB, valorC);
 
 // Aula 28:
 
+/*
 const num = Number(prompt("Digite um número: "));
 
 document.getElementById("chosenNum").innerHTML = num;
@@ -61,5 +62,32 @@ document.getElementById("numFloored").innerHTML = Math.floor(num);
 document.getElementById("numCeiled").innerHTML = Math.ceil(num);
 
 document.getElementById("decimalNum").innerHTML = (num.toFixed(2));
+*/
+
 
 // Aula 34:
+
+const people = [];
+document.querySelector("form").addEventListener("submit", sendForm);
+
+function sendForm(e) {
+  e.preventDefault();
+  console.log("teste");
+  const name = document.querySelector("#name").value;
+  console.log(name);
+  const surname = document.querySelector("#surname").value;
+  const weight = document.querySelector("#weight").value;
+  const height = document.querySelector("#height").value;
+
+  people.push({name, surname, weight, height}); 
+
+  let str = "";
+
+  for (let i = 0; i < people.length; i++) {
+    str += `<li>${people[i].name} ${people[i].surname} ${people[i].weight} ${people[i].height}</li>`;
+  }
+
+  document.querySelector("#list").innerHTML = str;
+
+}
+
