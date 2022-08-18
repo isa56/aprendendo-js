@@ -1,3 +1,5 @@
+// EXERCICIO 1 (AULA 44):
+/*
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -38,3 +40,73 @@ findIMCMessage = (imc) => {
     return "Obesidade grau III";
   }
 };
+*/
+
+    // EXERCICIO 2 (AULA 48):
+
+// const options = { dateStyle: 'full', timeStyle: 'short' };
+// document.querySelector(".container h1").textContent = new Date().toLocaleDateString('pt-BR', options);
+
+// OU
+
+// function addZeroToTheLeft(number) {
+//   return number < 10 ? `0${number}` : number;
+// }
+
+// function getWeekDateName(weekDay) {
+  // const days = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+  // return days[weekDay];
+// }
+
+// function getMonthName(month) {
+//   switch (month) {
+//     case 0:
+//       return "Janeiro";
+//     case 1:
+//       return "Fevereiro";
+//     case 2:
+//       return "Março";
+//     case 3:
+//       return "Abril";
+//     case 4:
+//       return "Maio";
+//     case 5:
+//       return "Junho";
+//     case 6:
+//       return "Julho";
+//     case 7:
+//       return "Agosto";
+//     case 8:
+//       return "Setembro";
+//     case 9:
+//       return "Outubro";
+//     case 10:
+//       return "Novembro";
+//     case 11:
+//       return "Dezembro";
+//   }
+// }
+
+// function formatDateToPtBr(date) {
+//   const weekDateName = getWeekDateName(date.getDay());
+
+//   const day = addZeroToTheLeft(date.getDate());
+//   let monthName = getMonthName(date.getMonth());
+
+//   const year = date.getFullYear();
+
+//   const hour = addZeroToTheLeft(date.getHours());
+//   const minutes = addZeroToTheLeft(date.getMinutes());
+
+//   return `${weekDateName}, ${day} de ${monthName} de ${year} ${hour}:${minutes}`;
+// }
+
+// function calculateShowTime() {
+//   const showTime = formatDateToPtBr(new Date());
+
+//   document.querySelector(".container h1").textContent = showTime;
+// }
+
+// calculateShowTime();
+
+    // EXERCICIO 3 (AULA X):
