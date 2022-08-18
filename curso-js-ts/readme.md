@@ -9,4 +9,5 @@ Link: [Curso de JavaScript e TypeScript do básico ao avançado 2022](https://ww
 | Seção |
 | --- |
 | [Seção 2 - JS Básico](/curso-js-ts/sec-2-js-basico/) |
+| [Seção 3 - Lógica de Programação](/curso-js-ts/sec-3-logica-prog/) |
 <!-- | []() | -->

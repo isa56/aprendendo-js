@@ -118,9 +118,122 @@ console.log(formatDateToPtBr(currentDate));
 
 ## Var vs Let vs Const:
 
-- `var` tem escopo de função;
-- `let` tem escopo de bloco ` { bloco } `;
+- `var` tem escopo de função e sofre hoisting;
+- `let` tem escopo de bloco ` { bloco } ` e não sofre hoisting;
+
+\* **hoisting**: declaração é "elevada" para o topo do escopo, mas atribuição, não.
+
+```javascript	
+
+console.log(varTest); // undefined
+console.log(letTest); // ERRO: letTest is not defined
+
+var varTest = 'var';
+let letTest = 'let';
+
+```
 
 
+## Destructuring:
+
+### Arrays:
+
+- Atribuir valores de um array para variáveis separadas, "desestruturando" o array, tirando seus valores e colocando-os em variáveis separadas.
+
+\* Operador: `...` => pegar o resto: *rest operator*
+
+```javascript
+
+let a = 'A', b = 'B', c = 'C';
+const letras = [b, c, a];
+
+[a, b, c] = letras;  // atribuição por desestruração
+
+console.log(a, b, c); // 1 2 3
+
+const numeros = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000];
+const [first, second, third, , fifth, ...rest] = numeros;
+
+console.log(first, second, fifth, rest); // 1000 2000 5000, [6000, 7000, 8000, 9000]
+
+```
 
 
+### Objetos:
+
+```javascript	
+
+const person = {
+  name: 'João',
+  age: 20,
+  address: {
+    city: 'São Paulo',
+    state: 'SP'
+  }
+}
+
+let { name, age, address: { city, state } } = person;
+
+let { name } = person;
+let { name: teste, sobrenome: surname = '' age: idade } = person;
+
+let { name: nome, ...rest } = person;
+
+```
+
+
+## Estruturas de repetição:
+
+- `for...in`:
+[Documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/for...in).
+
+O laço for...in interage sobre propriedades enumeradas de um objeto, na ordem original de inserção. O laço pode ser executado para cada propriedade distinta do objeto.
+
+```JavaScript
+
+const fruits = ['Banana', 'Maçã', 'Pera', 'Uva', 'Melancia'];
+const person = {
+  name: 'Isa',
+  surname: 'Ferreira',
+  age: 20,
+}
+
+for (let index in fruits) {
+  console.log(fruits[index]);
+}
+
+for (let key in person) {
+  console.log(person[key]);
+}
+
+```
+
+- `for...of`:
+[Documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/for...of)
+O loop for...of percorre objetos iterativos (incluindo Array, Map, Set, o objeto arguments e assim por diante), chamando uma função personalizada com instruções a serem executadas para o valor de cada objeto distinto.
+
+```js
+
+const names = ['Isadora', 'Evelyn', 'Davi'];
+
+for(let name of names) {
+  console.log(name);
+}
+
+```
+
+- `forEach`:
+[Documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+O método forEach() executa uma dada função em cada elemento de um array.
+
+```js
+
+const names = ['Isadora', 'Evelyn', 'Davi'];
+
+names.forEach((name, index) => {
+  console.log(`[${index + 1}] - ${name}`);
+});
+
+```
+
+```
