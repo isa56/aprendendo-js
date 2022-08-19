@@ -291,8 +291,25 @@ try {
 ```
 
 
-<!-- ## Controle de Timers:
+## Controle de Timers:
 
-- 
- -->
+- Configurar um Intervalo de Tempo para que determinada função seja executada - `setInterval`;
+
+- Configurar um Tempo para que determinada função seja executada - `setTimeout`;
+
+
+```js
+
+function showTime() {
+  return (new Date().toLocaleTimeString('pt-BR', {
+    hour12: false
+  }));
+}
+
+const timer = setInterval(() => console.log(showTime()), 1000);
+
+setTimeout(() => clearInterval(timer), 10000);
+
+```
+
 
