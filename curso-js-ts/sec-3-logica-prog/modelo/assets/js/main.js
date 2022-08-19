@@ -109,7 +109,7 @@ findIMCMessage = (imc) => {
 
 // calculateShowTime();
 
-      // EXERCICIO 3 (AULA 53):
+// EXERCICIO 3 (AULA 53):
 
 /*
 const elements = [
@@ -129,6 +129,55 @@ for (let i = 0; i < elements.length; i++) {
 }
 */
 
-      // EXERCICIO 4 (AULA 60):
+// EXERCICIO 4 (AULA 57):
+/*
+const paragraphsContainer = document.querySelector(".paragraphs");
 
+const paragraphs = paragraphsContainer.querySelectorAll("p");
+
+const stylesBody = getComputedStyle(document.body);
+
+for (let p of paragraphs) {
+  p.style.backgroundColor = stylesBody.backgroundColor;
+  p.style.color = "white";
+}
+*/
+
+// EXERCICIOS 5 (AULA 60~62):
+
+/*
+// A) Função que recebe 2 nums e retorna o maior deles
+
+const getBiggestNumber = (a = 0, b = 0) => (a > b ? a : b);
+
+console.log(getBiggestNumber(15, 16));
+
+// B) Função que recebe largura e altura de uma imagem (number) e retorna se a imagem é paisagem ou não (boolean)
+
+const isLandscape = (width = 0, height = 0) => width > height;
+
+console.log(isLandscape(1920, 1080));
+console.log(isLandscape(1080, 1920));
+
+// C) Função que recebe num. Se for divisível por 3, retorna 'Fizz'. Por 5, retorna 'Buzz'. Por 3 e 5, retorna 'FizzBuzz'. Por nada, retorna o próprio num.
+
+const fizzBuzz = (num = 0) => {
+  if (typeof num !== "number" || num < 0 || num > 100) {
+    console.log("Erro: Digite um número entre 0 e 100");
+    return;
+  }
+
+  let fizzbuzz = "";
+
+  if (num % 3 === 0) fizzbuzz += "Fizz";
+  if (num % 5 === 0) fizzbuzz += "Buzz";
+  return fizzbuzz || num;
+};
+
+console.log(fizzBuzz(15));
+console.log(fizzBuzz(9));
+console.log(fizzBuzz(25));
+console.log(fizzBuzz(7));
+console.log(fizzBuzz("cem"));
+*/
 

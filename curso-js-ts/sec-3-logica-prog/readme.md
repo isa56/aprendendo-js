@@ -236,4 +236,63 @@ names.forEach((name, index) => {
 
 ```
 
+## Tratamento e Lançamento de Erros:
+
+- Existem códigos "perigosos", que podem gerar erros. Ex.: conexão com a API não pôde ser estabelecida. Por isso, um dado não pode ser exibido.
+
+- Bloco para testar um código e capturar eventuais erros - `try...catch...finally`:
+
+```js
+
+try {
+  // É executada quando não há erros
+  console.log(imAVarThatDoesntExist);
+
+  console.log('Abri um arquivo');
+  console.log('Manipulei o arquivo e gerei um erro');
+  // console.log('Fechei o arquivo');  // Não será executado
+} catch (error) {
+  // É executada quando há erros
+  console.log('Ocorreu um erro: ', error);
+
+  console.log('Tratando o erro'); // Tratei o erro
+} finally () {
+  // É executada sempre
+  console.log('Fechei o arquivo');  // Momento para fechar o arquivo, já que não foi executado no bloco try
+
+}
+
 ```
+
+- Pode ser interessante gerar nossos próprios erros, para que possamos tratar de forma específica. Para isso, usamos o `throw`:
+
+- Lançamento de erros - `throw` e a classe `Error`:
+
+```js
+
+function sum(x, y) {
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('x e y precisam ser números');
+  }
+  return x + y;
+}
+
+console.log(sum(1, 2)); // 3
+console.log(sum('1', 2)); // Error: x e y precisam ser números
+
+// Corrigindo:
+
+try {
+  console.log(sum('1', 2)); // Error: x e y precisam ser números
+} catch (err) {
+  console.log('Ocorreu um erro :(',);
+}
+
+```
+
+
+<!-- ## Controle de Timers:
+
+- 
+ -->
+
