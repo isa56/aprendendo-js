@@ -238,8 +238,112 @@ console.log("Aqui seria o escopo global");
 
 ## Funções Construtoras (Constructor Functions)
 
+- Funções que retornam objetos (geralmente relacionada a classes): funciona como um molde pra objetos;
+- 
+
+```js
+
+function Person(firstName, lastName) {
+  const id = '123456';
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.fullName = function () {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  const internalMethod = function () {
+    console.log("Internal method");
+  }
+}
+
+```
 
 ## Funções Recursivas
 
+- Funções que se chamam;
+
+```js
+function calculateFactorial(number) {
+  if (number === 1) {
+    return 1;
+  }
+  return number * calculateFactorial(number - 1);
+}
+
+calculateFactorial(10);
+```
 
 ## Funções Geradoras (Generators)
+
+- Funções que podem ser pausadas e retomadas em qualquer momento;
+- Usa lazy evaluation;
+
+- [Documentação da função](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/function*);
+- [Documentação do Objeto](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Generator);
+
+```js	
+
+function* generator1() {
+  yield 'Valor 1';
+  yield 'Valor 2';
+  yield 'Valor 3';
+}
+
+const g1 = generator1();
+
+console.log(g1.next(), g1.next().value);
+console.log(g1.next(), g1.next().value);
+console.log(g1.next(), g1.next().value);
+
+function* generator2() {
+  let i = 0;
+  while(true) {
+    yield i;
+    i++;
+  }
+}
+
+const g2 = generator2();
+
+console.log(g2.next().value);
+console.log(g2.next().value);
+console.log(g2.next().value);
+console.log(g2.next().value);
+// Infinito...
+
+function* generator3() {
+  yield 0;
+  yield 1;
+  yield 2;
+}
+
+function* generator4() {
+  yield* generator3();
+  yield 3;
+  yield 4;
+  yield 5;
+}
+
+const g4 = generator4();
+
+for(let value of g4) {
+  console.log(value);
+}
+
+function* generator5() {
+  yield function() {
+    console.log('came from y1');
+  }
+
+  yield function() {
+    console.log('came from y2');
+  }
+}
+
+const g5 = generator5();
+const f1g5 = g5().next().value();
+const f2g5 = g5().next().value();
+
+f1g5();
+f2g5();
+
+```

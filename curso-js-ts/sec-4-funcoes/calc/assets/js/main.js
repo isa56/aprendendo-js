@@ -1,4 +1,3 @@
-/*
 (function () {
   // Var:
   let str = "";
@@ -14,6 +13,12 @@
       deleteLast();
     } else if (trgt.classList.contains("btn-num")) {
       addNumber(trgt);
+    }
+  });
+
+  document.querySelector(".display").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      calculate();
     }
   });
 
@@ -39,8 +44,15 @@
   }
 
   function calculate() {
-    str = eval(str);
-    updateStr();
+    try {
+      str = eval(str);
+      if (str !== 0 && str !== "0" && !str) {
+        alert("Invalid input");
+        return;
+      }
+      updateStr();
+    } catch (e) {
+      alert("Invalid input");
+    }
   }
 })();
-*/
