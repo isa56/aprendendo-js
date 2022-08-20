@@ -195,12 +195,45 @@ console.log(fun2);
 ## Funções de Callback
 
 
+- Funções que são passadas como argumento para outras funções, para serem chamadas depois, em algum momento da execução da função que recebeu a função de callback;
+- [Documentação](https://developer.mozilla.org/pt-BR/docs/Glossary/Callback_function);
+- [Artigo](https://www.freecodecamp.org/portuguese/news/funcoes-de-callback-em-javascript-o-que-sao-e-como-usa-las/)
 
-## Funções Imediatas - IIFE (Immediately Invoked Function Expression)
+\* [Arquivo de exemplo](/curso-js-ts/sec-4-funcoes/callback.js);
+
+## Funções Imediatas / Funções Auto Invocadas - IIFE (Immediately Invoked Function Expression)
+
+[Documentação](https://developer.mozilla.org/pt-BR/docs/Glossary/IIFE)
+
+- Funções que são executadas imediatamente após serem definidas;
+- Definir uma função para esconder seus dados do escopo global ao invés de colocá-los diretamente no escopo global;
+
+```js
+
+(function () {  // Função anônima auto invocada
+  // Escopo do meu app
+  const nome = 'Isa';
+  console.log(nome);
+})();
+
+console.log("Aqui seria o escopo global");
+
+```
 
 
 ## Funções Fábrica (Factory Functions)
 
+- Funções que retornam objetos;
+- Funções dentro de objetos são chamadas métodos;
+- [Uso da palavras `this`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/this): definir o escopo do atributo/método como o objeto => sempre procura nos atributos de quem o chamou;
+  - Arrow functions não funcionam com o `this` e sempre apontam para o escopo global;
+- Utilizando a palavra reservada `get`, podemos tornar métodos acessíveis como atributos;
+- Utilizando a palavra reservada `set`, podemos alterar atributos do objeto;
+
+- [Artigo Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-factory-functions-and-the-module-pattern);
+- [JavaScript Tutorial](https://www.javascripttutorial.net/javascript-factory-functions/);
+
+\* [Arquivo de exemplo](/curso-js-ts/sec-4-funcoes/factory.js);
 
 
 ## Funções Construtoras (Constructor Functions)
