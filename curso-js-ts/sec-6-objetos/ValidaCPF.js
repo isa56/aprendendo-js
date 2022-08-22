@@ -15,50 +15,51 @@ Se o número digito for maior que 9, consideramos 0.
 Se o número digito for maior que 9, consideramos 0.
 */
 function ValidaCPF(cpfEnviado) {
-  Object.defineProperty(this, 'cpfLimpo', {
+  Object.defineProperty(this, "cpfLimpo", {
     enumerable: true,
-    get: function() {
-      return cpfEnviado.replace(/\D+/g, '');
-    }
+    get: function () {
+      return cpfEnviado.replace(/\D+/g, "");
+    },
   });
 }
 
-ValidaCPF.prototype.valida = function() {
-  if(typeof this.cpfLimpo === 'undefined') return false;
-  if(this.cpfLimpo.length !== 11) return false;
-  if(this.isSequencia()) return false;
-
-  const cpfParcial = this.cpfLimpo.slice(0, -2);
-  const digito1 = this.criaDigito(cpfParcial);
-  const digito2 = this.criaDigito(cpfParcial + digito1);
-
-  const novoCpf = cpfParcial + digito1 + digito2;
-  return novoCpf === this.cpfLimpo;
-};
-
-ValidaCPF.prototype.criaDigito = function(cpfParcial) {
+ValidaCPF.prototype.criaDigito = function (cpfParcial) {
   const cpfArray = Array.from(cpfParcial);
+  let regressiveCounter = cpfArray.length + 1;
 
-  let regressivo = cpfArray.length + 1;
-  const total = cpfArray.reduce((ac, val) => {
-    ac += (regressivo * Number(val));
-    regressivo--;
-    return ac;
+  // reduz o array no valor dos ultimos digito:
+  const total = cpfArray.reduce((accumulator, currentValue) => {
+    accumulator += regressiveCounter * Number(currentValue); // soma ao acumulador o peso do número do cpf
+    regressiveCounter--; // decrementa contador regressivo
+    return accumulator;
   }, 0);
 
   const digito = 11 - (total % 11);
-  return digito > 9 ? '0' : String(digito);
+  return digito > 9 ? "0" : String(digito);
 };
 
-ValidaCPF.prototype.isSequencia = function() {
+ValidaCPF.prototype.isSequencia = function () {
   const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length);
   return sequencia === this.cpfLimpo;
 };
 
-const cpf = new ValidaCPF('070.987.720-03');
+ValidaCPF.prototype.valida = function () {
+  if (typeof this.cpfLimpo === "undefined" || this.cpfLimpo.length !== 11 || this.isSequencia()) return false;
 
-if(cpf.valida()) {
-  console.log('Cpf válido');
+  let partialCPF = this.cpfLimpo.slice(0, -2);
+  let digit1 = this.criaDigito(partialCPF);
+  partialCPF = partialCPF + digit1;
+  let digit2 = this.criaDigito(partialCPF);
+  partialCPF = partialCPF + digit2;
+
+  return this.cpfLimpo === partialCPF;
+};
+
+
+const cpf = new ValidaCPF("070.987.720-03");
+
+if (cpf.valida()) {
+  console.log("Cpf válido");
 } else {
-  console.log('Cpf inválido');
+  console.log("Cpf inválido");
 }
