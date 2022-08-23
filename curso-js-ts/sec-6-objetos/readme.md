@@ -266,13 +266,127 @@ const cup1 = new Cup('Caneca', 15, 'Vidro');
 
 console.log(cup1);
 
-
 ```
 
 ## Polimorfismo
 
+- Capacidade de um objeto que herda de outro de possuir métodos com o mesmo nome, mas com comportamentos diferentes;
+
+```js	
+
+function Account(agency, accountNumber, balance) {
+  this.agency = agency;
+  this.accountNumber = accountNumber;
+  this.balance = balance;
+};
+
+Account.prototype.withdraw = function(value) {
+  if (this.balance < value) {
+    console.log(`Saldo insuficiente: ${this.balance}`);
+    return;
+  }
+  this.balance -= value;
+  this.viewBalance();
+};
+
+Account.prototype.deposit = function(value) {
+  this.balance += value;
+  this.viewBalance();
+};
+
+Account.prototype.viewBalance = function() {
+  console.log(`Ag/Ac: ${this.agency}/${this.accountNumber} | Saldo: R$${this.balance.toFixed(2)}`);
+};
+
+const ac1 = new Account(25, 55, 10);
+ac1.deposit(25);
+ac1.withdraw(30);
+ac1.withdraw(5);
+ac1.withdraw(100);
+
+function CheckingAccount(agency, accountNumber, balance, limit) {
+  Account.call(this, agency, accountNumber, balance);
+  this.limit = limit;
+};
+
+CheckingAccount.prototype = Object.create(Account.prototype);
+CheckingAccount.prototype.constructor = CheckingAccount;
+
+// Sobrescrevendo o método withdraw:
+CheckingAccount.prototype.withdraw = function(value) {
+  if (value > (this.balance + this.limit)) {
+    console.log(`Saldo insuficiente: ${this.balance}`);
+    return;
+  }
+  this.balance -= value;
+  this.viewBalance();
+};
+
+const cc1 = new Account(25, 55, 10);
+cc1.deposit(25);
+cc1.withdraw(30);
+cc1.withdraw(5);
+cc1.withdraw(100);
+
+```
 
 ## Factory Functions + Prototypes
 
 
-## Objeto `Map()`
+```js
+
+function createPerson(name, lastName) {
+  const personPrototype = {
+    fullName() {
+      return `${this.name} ${this.lastName}`;
+    },
+    speak() {
+      console.log(`${this.name} está falando.`);
+    },
+  };
+  return Object.create(personPrototype, {
+    name: { value: name },
+    lastName: { value: lastName },
+  });
+};
+
+const p1 = createPerson('Isadora', 'Ferreira');
+console.log(p1);
+
+```
+
+## Estrutura de Dados `Map()`
+
+- Estrutura de dados que armazena chaves e valores;
+
+[Documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Map).
+
+```js
+
+const people = [
+  {id: 1, name: 'Isadora'},
+  {id: 2, name: 'Evelyn'},
+  {id: 3, name: 'Davi'},
+];
+
+// const newPeople = {};
+
+// for (const person of people) {
+//   const { id } = person;
+//   newPeople[id] = { ...person };
+// };
+
+const newPeople = new Map();
+for (const person of people) {
+  const { id } = person;
+  newPeople.set(id, { ...person });
+};
+
+console.log(newPeople);
+console.log(newPeople.get(2));
+
+for (const person of newPeople) {
+  console.log(person);
+};
+
+```
