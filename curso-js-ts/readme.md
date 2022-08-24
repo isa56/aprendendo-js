@@ -15,7 +15,7 @@ Link: [Curso de JavaScript e TypeScript do básico ao avançado 2022](https://ww
 | [Seção 6 - Objetos e Prototypes (avancado)](/curso-js-ts/sec-6-objetos/) |
 | [Seção 7 - Classes e O.O.](/curso-js-ts/sec-7-classes/) |
 | [Seção 8 - Assincronismo](/curso-js-ts/sec-8-assincrono/) |
-<!-- | [Seção 9 - Tooling e ES6 Modules](/curso-js-ts/sec-9-tooling-modules/) | -->
+| [Seção 9 - Tooling e ES6 Modules](/curso-js-ts/sec-9-tooling-modules/) |
 <!-- | [Seção 10 - Node, NPM, Express e MongoDB](/curso-js-ts/sec-10-npm-node/) | -->
 <!-- | [Seção 11 - Projeto Agenda com Node](/curso-js-ts/sec-11-proj-agenda/) | -->
 <!-- | [Seção 12 - Linux, Deploy e SSH](/curso-js-ts/sec-12-linux-deploy-SSH/) | -->
