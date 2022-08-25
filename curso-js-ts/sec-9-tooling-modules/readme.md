@@ -12,10 +12,8 @@
 - [Webpack](https://webpack.js.org/): empacotador de módulos. Ele pega todos os módulos do projeto e gera um único arquivo js para ser usado no navegador.
 
 # ES6 Modules
-
 ## Import / Export
 
 - [Import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import): importa um módulo.
 - [Export](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export): exporta um módulo.
 
-## 
