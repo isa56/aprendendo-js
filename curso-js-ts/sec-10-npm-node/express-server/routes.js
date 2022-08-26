@@ -1,14 +1,11 @@
 const express = require("express");
 
-const HomeController = require("./controllers/HomeController");
-const ContactController = require("./controllers/ContactController");
+const HomeController = require("./src/controllers/HomeController");
 
 const route = express.Router();
 
 route.get("/", HomeController.index);
 
-route.get("/contato", ContactController.index);
-
-route.post("/contato/:parameters?", ContactController.formSent);
+route.post("/:parameters?", HomeController.formSent);
 
 module.exports = route;

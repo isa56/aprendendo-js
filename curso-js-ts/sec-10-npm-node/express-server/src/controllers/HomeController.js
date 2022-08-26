@@ -1,10 +1,5 @@
 exports.index = (req, res) => {
-  res.send(`
-  <form method="POST" action="/contato">
-  Nome: <input type="text" name="nome">
-  <button type="submit">Enviar</button>
-  </form>
-  `);
+  res.render('index')
 };
 
 exports.formSent = (req, res) => {
