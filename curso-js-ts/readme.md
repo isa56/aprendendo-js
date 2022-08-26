@@ -16,7 +16,7 @@ Link: [Curso de JavaScript e TypeScript do básico ao avançado 2022](https://ww
 | [Seção 7 - Classes e O.O.](/curso-js-ts/sec-7-classes/) |
 | [Seção 8 - Assincronismo](/curso-js-ts/sec-8-assincrono/) |
 | [Seção 9 - Tooling e ES6 Modules](/curso-js-ts/sec-9-tooling-modules/) |
-<!-- | [Seção 10 - Node, NPM, Express e MongoDB](/curso-js-ts/sec-10-npm-node/) | -->
+| [Seção 10 - Node, NPM, Express e MongoDB](/curso-js-ts/sec-10-npm-node/) |
 <!-- | [Seção 11 - Projeto Agenda com Node](/curso-js-ts/sec-11-proj-agenda/) | -->
 <!-- | [Seção 12 - Linux, Deploy e SSH](/curso-js-ts/sec-12-linux-deploy-SSH/) | -->
 <!-- | [Seção 13 - API REST](/curso-js-ts/sec-13-api-rest/) | -->
@@ -39,7 +39,6 @@ Link: [Curso de JavaScript e TypeScript do básico ao avançado 2022](https://ww
 <!-- | [Seção 30 - Deploy NextJS](/curso-js-ts/sec-30-deploy-nextjs/) | -->
 <!-- | [Seção 31 - SQL](/curso-js-ts/sec-31-sql/) | -->
 <!-- | [Seção 32 - Knex.js](/curso-js-ts/sec-32-knexjs/) | -->
-<!-- | [Seção 33 - HTML e CSS](/curso-js-ts/sec-33-html-css/) | -->
 <!-- | [Seção 34 - HTML e CSS - Landing Page](/curso-js-ts/sec-34-landing page/) | -->
 <!-- | [Seção 35 - Comandos Linux](/curso-js-ts/sec-35-landing page/) | -->
 <!-- | [Seção 37 - Bônus](/curso-js-ts/sec-37-bonus/) | -->
