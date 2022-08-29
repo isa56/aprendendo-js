@@ -1,10 +1,11 @@
 # Node, Express, NPM
 
+\* [Documentação do EJS](https://ejs.co/).
+
 ## Módulos do Node
 
 - **Exportar** módulos ao adicionar atributos ao objeto `module.exports`: `module.exports.nomeDoAtributo = valorDoAtributo``;
 - **Importar** módulos com `require`: `const nomeDoModulo = require('nomeDoModulo')`;
-
 
 ## NPM
 
@@ -38,6 +39,3 @@
 - **Url Query**: vem depois da rota e é separado por `?` (`req.query`): `app.get('/rota', (req, res) => { res.send(req.query) })`;
 
 - **Body** da requisição: vem no corpo da requisição (`req.body`): `app.post('/rota', (req, res) => { res.send(req.body) })`;
-
-### 
-

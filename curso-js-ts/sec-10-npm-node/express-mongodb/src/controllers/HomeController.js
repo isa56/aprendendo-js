@@ -9,12 +9,11 @@
 //   .catch(e => console.log("ERRO ", e));
 
 exports.index = (req, res, next) => {
-
   // Salvar na session:
   // req.session.user = { name: "Isadora", logged: true };
 
   // Acessar algo da session:
-  console.log(req.session.user);
+  // console.log(req.session.user);
 
   // Salvar mensagens (que se auto-destruirão após serem lidas):
   // req.flash("info", "Olá, seja bem vindo! Info");
@@ -25,7 +24,12 @@ exports.index = (req, res, next) => {
   // console.log(req.flash("info"));
   // console.log(req.flash("error"));
   // console.log(req.flash("success"));
-  res.render("index");
+
+  res.render("index", {
+    title: "Título da página",
+    numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    user: { name: "Isa" },
+  });
 };
 
 exports.formSent = (req, res, next) => {

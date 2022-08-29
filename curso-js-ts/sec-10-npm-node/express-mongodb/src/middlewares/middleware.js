@@ -5,6 +5,7 @@ module.exports.firstMiddleware = (req, res, next) => {
 }
 
 module.exports.global = (req, res, next) => {
+  res.locals.localVariable = "Local Variable created by global middleware";
   console.log("\nMiddleware Global");
   next();
 }
