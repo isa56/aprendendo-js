@@ -33,7 +33,7 @@ exports.index = (req, res, next) => {
 };
 
 exports.formSent = (req, res, next) => {
-  console.log(req.session);
+  // console.log(req.session);
   // valores enviados pelo cliente, valores recebidos pelo cliente e enviados pelo servidor
   res.send(
     `${req.params.parameters} |||

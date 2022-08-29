@@ -2,6 +2,8 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
+const helmet = require("helmet");
+const csrf = require("csurf");
 
 const mongoose = require("mongoose");
 
@@ -10,7 +12,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flashMessages = require("connect-flash");
 
-const { global } = require("./src/middlewares/middleware");
+const { global, checkCsrfError, csrfMiddleware } = require("./src/middlewares/middleware");
 const routes = require("./routes");
 
 const app = express();
@@ -47,9 +49,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(flashMessages());
 
 app.use(global);
+app.use(sessionOptions);
+
+app.use(csrf()); // middleware de proteção contra CSRF
+app.use(checkCsrfError);
+app.use(csrfMiddleware);
+
 app.use(routes);
 
-app.use(sessionOptions);
+
+// Configure Helmet (segurança)
+// app.use(helmet());
 
 app.set("views", path.resolve(__dirname, "src", "views")); // determina o caminho para as views
 app.set("view engine", "ejs"); // determina o motor de renderização
