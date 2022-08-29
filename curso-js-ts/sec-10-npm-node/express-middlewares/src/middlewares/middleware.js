@@ -1,6 +1,6 @@
 module.exports.firstMiddleware = (req, res, next) => {
-  req.session = { name: "Isadora", lastName: "Ferreira" };
-  console.log("\nMy First Middleware\n");
+  // req.session = { name: "Isadora", lastName: "Ferreira" };
+  // console.log("\nMy First Middleware\n");
   next();
 }
 
