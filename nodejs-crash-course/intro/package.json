@@ -1,0 +1,21 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "Basico de NodeJS baseado em um tutorial.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [
+    "estudo"
+  ],
+  "author": "Isadora Gonçalves Ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
