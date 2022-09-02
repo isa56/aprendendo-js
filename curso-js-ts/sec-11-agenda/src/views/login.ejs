@@ -6,44 +6,49 @@
 
       <div class="col-lg-2"></div>
       <div class="col-lg-8 my-3">
-        <h1 class="text-center">Acesse sua conta</h1>
-        <p class="text-center lead">Acesse seus contatos</p>
+        <% if (user) { %>
+          <h1 class="text-center">Você está logado</h1>
+          <p class="text-center lead"><a href="/">Acesse seus contatos</a></p>
+          <%- include("includes/messages"); %>
+            <% } else { %>
+              <h1 class="text-center">Acesse sua conta</h1>
+              <p class="text-center lead">Acesse seus contatos</p>
 
-        <%- include("includes/messages"); %>
+              <%- include("includes/messages"); %>
 
-          <div class="row">
-            <div class="col-lg">
-              <h4>Faça seu cadastro</h4>
-              <form action="/login/create-account" method="POST">
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <div class="mb-3">
-                  <label for="createEmail" class="form-label">Endereço de E-Mail</label>
-                  <input type="email" class="form-control" id="createEmail" name="email">
+                <div class="row">
+                  <div class="col-lg">
+                    <h4>Faça seu cadastro</h4>
+                    <form action="/login/create-account" method="POST">
+                      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                      <div class="mb-3">
+                        <label for="createEmail" class="form-label">Endereço de E-Mail</label>
+                        <input type="email" class="form-control" id="createEmail" name="email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="createPassword" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="createPassword" name="password">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Criar Conta</button>
+                    </form>
+                  </div>
+                    <div class="col-lg">
+                      <h4>Faça login</h4>
+                      <form action="/login" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="mb-3">
+                          <label for="logEmail" class="form-label">Endereço de E-Mail</label>
+                          <input type="email" class="form-control" id="logEmail" name="email">
+                        </div>
+                        <div class="mb-3">
+                          <label for="logPassword" class="form-label">Senha</label>
+                          <input type="password" class="form-control" id="logPassword" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                      </form>
+                    </div>
                 </div>
-                <div class="mb-3">
-                  <label for="createPassword" class="form-label">Senha</label>
-                  <input type="password" class="form-control" id="createPassword" name="password">
-                </div>
-                <button type="submit" class="btn btn-primary">Criar Conta</button>
-              </form>
-            </div>
-
-            <div class="col-lg">
-              <h4>Faça login</h4>
-              <form action="/login" method="POST">
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <div class="mb-3">
-                  <label for="logEmail" class="form-label">Endereço de E-Mail</label>
-                  <input type="email" class="form-control" id="logEmail">
-                </div>
-                <div class="mb-3">
-                  <label for="logPassword" class="form-label">Senha</label>
-                  <input type="password" class="form-control" id="logPassword">
-                </div>
-                <button type="submit" class="btn btn-primary">Entrar</button>
-              </form>
-            </div>
-          </div>
+                <% } %>
 
       </div>
       <div class="col-lg-2"></div>
