@@ -1,3 +1,43 @@
 <%- include('includes/head'); %>
 
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-3">
+        <h1 class="text-center">Crie ou edite um contato</h1>
+
+        <%- include("includes/messages"); %>
+
+        <form action="/contact/create" method="POST">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= contact.name %>" required>
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Sobrenome</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" value="<%= contact.lastName %>" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Celular</label>
+            <input type="tel" class="form-control" id="phone" name="phone" value="<%= contact.phone %>" required pattern="[0-9]{2}9[0-9]{4}[0-9]{4}">
+          </div>
+          <div class="mb-3">
+            <label for="createEmail" class="form-label">Endereço de E-Mail</label>
+            <input type="email" class="form-control" id="createEmail" name="email" value="<%= contact.email %>" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Criar Contato</button>
+        </form>
+
+    </div>
+    <div class="col-lg-2"></div>
+
+  </div>
+
+</div>
+
+
 <%- include('includes/footer'); %>
