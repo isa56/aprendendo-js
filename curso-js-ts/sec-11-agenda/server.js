@@ -12,7 +12,7 @@ const routes = require('./routes');
 const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
 
 const app = express();
-mongoose.connect(process.env.DBCONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DBCONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
   .then(() => {
     app.emit('ready');
   })
