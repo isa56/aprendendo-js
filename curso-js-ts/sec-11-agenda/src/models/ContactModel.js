@@ -33,6 +33,11 @@ class Contact {
     });
   }
 
+  static async delete(id) {
+    if (typeof id !== "string") return;
+    return await ContactModel.findOneAndDelete({ _id: id });
+  }
+
   cleanUp() {
     for (const key in this.body) {
       if (typeof this.body[key] !== "string") {
@@ -63,7 +68,6 @@ class Contact {
   }
 
   static async getContactById(id) {
-
     if (typeof id !== "string") return;
 
     const contact = await ContactModel.findById(id);
@@ -71,6 +75,10 @@ class Contact {
     if (!contact) throw new Error("Contato não encontrado.");
 
     return contact;
+  }
+
+  static async getContacts() {
+    return (await ContactModel.find().sort({ createdAt: -1 }));
   }
 }
 

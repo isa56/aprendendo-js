@@ -6,37 +6,56 @@
 
       <div class="col-lg-2"></div>
       <div class="col-lg-8 my-3">
-        <h1 class="text-center">Agenda</h1>
-        <p class="text-center lead">Acesse seus contatos</p>
+        <h1 class="text-center"><i class="bi bi-journal-plus"></i> Agenda</h1>
+        <p class="text-center lead"><i class="bi bi-person-lines-fill"></i> Acesse seus contatos</p>
+        <p class="text-center lead">
+          <a type="button" class="btn btn-primary btn-lg" href="/contact/form"><i class="bi bi-person-plus-fill"></i> Adicionar contato</a>
+        </p>
 
         <%- include("includes/messages"); %>
 
-          <div class="responsive-table">
-            <table class="table table table-striped">
-              <tr>
-                <th>Nome</th>
-                <th>Sobrenome</th>
-                <th>Telefone</th>
-                <th>E-Mail</th>
-              </tr>
-              <!--  <%/* for (let i=0; i < contacts.length; i++) { %>
+          <% if (contacts.length > 0) { %>
+            <div class="responsive-table">
+              <table class="table table table-striped">
                 <tr>
-                  <td>
-                    <%= contacts[i].name %>
-                  </td>
-                  <td>
-                    <%= contacts[i].surname %>
-                  </td>
-                  <td>
-                    <%= contacts[i].phone %>
-                  </td>
-                  <td>
-                    <%= contacts[i].email %>
-                  </td>
+                  <th>Nome</th>
+                  <th>Sobrenome</th>
+                  <th>Telefone</th>
+                  <th>E-Mail</th>
+                  <th>Excluir</th>
                 </tr>
-                <% } */%> -->
-            </table>
-          </div>
+                <% for (let i=0; i < contacts.length; i++) { %>
+                  <tr>
+                    <td>
+                      <i class="bi bi-person-fill"></i>
+                      <%= contacts[i].name %>
+                    </td>
+                    <td>
+                      <%= contacts[i].lastName %>
+                    </td>
+                    <td>
+                      <i class="bi bi-telephone-fill"></i>
+                      <%= contacts[i].phone %>
+                    </td>
+                    <td>
+                      <i class="bi bi-envelope-fill"></i>
+                      <%= contacts[i].email %>
+                    </td>
+                    <td>
+                      <a type="button" class="btn btn-primary" href="/contact/form/<%= contacts[i]._id %>">
+                        <i class="bi bi-pencil"></i>
+                      </a>
+                      <a type="button" class="btn btn-danger" href="/contact/delete/<%= contacts[i]._id %>">
+                        <i class="bi bi-trash"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <% } %>
+              </table>
+            </div>
+            <% } else { %>
+              <p class="text-center lead">Nenhum contato cadastrado</p>
+              <% } %>
 
       </div>
       <div class="col-lg-2"></div>

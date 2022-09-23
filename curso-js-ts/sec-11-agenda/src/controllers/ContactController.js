@@ -69,4 +69,17 @@ exports.update = async (req, res) => {
   }
 };
 
-// exports.delete = (req, res) => {};
+exports.delete = async (req, res) => {
+  try {
+    if (!req.params.id) return res.render("404");
+
+    const contact = await Contact.delete(req.params.id);
+    if (!contact) return res.render("404");
+
+    req.flash("success", "Contato excluído com sucesso.");
+    req.session.save(() => res.redirect("back"));
+  } catch (e) {
+    console.log(e);
+    return res.render("404");
+  }
+};
