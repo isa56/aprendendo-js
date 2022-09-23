@@ -24,6 +24,15 @@ class Contact {
     this.contact = await ContactModel.create(this.body);
   }
 
+  async update(id) {
+    if (typeof id !== "string") return;
+    this.validate();
+    if (this.errors.length > 0) return;
+    this.contact = await ContactModel.findByIdAndUpdate(id, this.body, {
+      new: true,
+    });
+  }
+
   cleanUp() {
     for (const key in this.body) {
       if (typeof this.body[key] !== "string") {
@@ -54,13 +63,12 @@ class Contact {
   }
 
   static async getContactById(id) {
+
     if (typeof id !== "string") return;
 
     const contact = await ContactModel.findById(id);
 
     if (!contact) throw new Error("Contato não encontrado.");
-
-    console.log(contact);
 
     return contact;
   }

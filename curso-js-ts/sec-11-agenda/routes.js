@@ -19,5 +19,6 @@ route.post("/login/create-account", LoginController.createAccount);
 route.get("/contact/form/", loginRequired, ContactController.index);
 route.get("/contact/form/:id", loginRequired, ContactController.editIndex);
 route.post("/contact/create", loginRequired, ContactController.create);
+route.post("/contact/update/:id", loginRequired, ContactController.update);
 
 module.exports = route;

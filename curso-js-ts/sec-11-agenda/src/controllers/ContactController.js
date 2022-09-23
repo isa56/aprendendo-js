@@ -45,6 +45,28 @@ exports.create = async (req, res) => {
   }
 };
 
-// exports.update = (req, res) => {};
+exports.update = async (req, res) => {
+
+  try {
+    if (!req.params.id) return res.render("404");
+
+    const contact = new Contact(req.body);
+    await contact.update(req.params.id);
+
+    if (contact.errors.length > 0) {
+      req.flash("errors", contact.errors);
+      req.session.save(function () {
+        return res.redirect("back");
+      });
+      return;
+    }
+
+    req.flash("success", "Contato atualizado com sucesso.");
+    req.session.save(() => res.redirect("back"));
+  } catch (e) {
+    console.log(e);
+    return res.render("404");
+  }
+};
 
 // exports.delete = (req, res) => {};
