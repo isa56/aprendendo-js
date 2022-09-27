@@ -18,8 +18,7 @@ Link: [Curso de JavaScript e TypeScript do básico ao avançado 2022](https://ww
 | [Seção 9 - Tooling e ES6 Modules](/curso-js-ts/sec-9-tooling-modules/) |
 | [Seção 10 - Node, NPM, Express e MongoDB](/curso-js-ts/sec-10-npm-node/) |
 | [Seção 11 - Projeto Agenda com Node](/curso-js-ts/sec-11-agenda/) |
-<!-- | [Seção 12 - Linux, Deploy e SSH](/curso-js-ts/sec-12-linux-deploy-SSH/) | -->
-<!-- | [Seção 13 - API REST](/curso-js-ts/sec-13-api-rest/) | -->
+| [Seção 13 - API REST](/curso-js-ts/sec-13-api-rest/) |
 <!-- | [Seção 14 - React - Class Components](/curso-js-ts/sec-14-react-class/) | -->
 <!-- | [Seção 15 - React - Redux](/curso-js-ts/sec-15-react-redux/) | -->
 <!-- | [Seção 16 - React Router Dom V6](/curso-js-ts/sec-16-react-router-dom/) | -->
@@ -43,3 +42,7 @@ Link: [Curso de JavaScript e TypeScript do básico ao avançado 2022](https://ww
 <!-- | [Seção 35 - Comandos Linux](/curso-js-ts/sec-35-landing page/) | -->
 <!-- | [Seção 37 - Bônus](/curso-js-ts/sec-37-bonus/) | -->
 <!-- | []() | -->
+<!-- | [Seção 12 - Linux, Deploy e SSH](/curso-js-ts/sec-12-linux-deploy-ssh/) | -->
+
+## Atividades para fazer:
+- [] [Aula 159 - Desafio Validando o Front-End](https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/learn/lecture/16740440)

@@ -2,3 +2,7 @@ node_modules/
 */*/node_modules/
 */node_modules/
 
+sec-12-linux-deploy-ssh/*.md
+/sec-12-linux-deploy-ssh/*.txt
+/sec-12-linux-deploy-ssh/*/*.txt
+/sec-12-linux-deploy-ssh/*.conf
