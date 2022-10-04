@@ -11,6 +11,7 @@ module.exports = {
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE,
+  dialect: 'mariadb',
   dialectOptions: {
     timezone: 'America/Sao_Paulo',
   },
