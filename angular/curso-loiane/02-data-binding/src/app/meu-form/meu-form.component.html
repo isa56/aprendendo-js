@@ -1,0 +1,11 @@
+<div>
+  <input class="form-control" type="text" [(ngModel)]="name">
+  <p>Você digitou: {{ name }}</p>
+</div>
+
+<div>
+  <input class="form-control" type="text" [(ngModel)]="person.name">
+  <input class="form-control" type="number" [(ngModel)]="person.age">
+
+  <p>Seu nome é {{ person.name }} e você tem: {{ person.age }} anos</p>
+</div>

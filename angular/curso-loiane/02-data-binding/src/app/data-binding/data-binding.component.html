@@ -1,0 +1,66 @@
+<section>
+  <article>
+    <h3>Interpolação</h3>
+    <p>Uma linda frase: {{ url }}</p>
+    <p>Somando 1 + 1 = {{ 1 + 1 }}</p>
+    <p>Pegando um valor: {{ getValor() }}</p>
+    <img src="{{ urlImage + 'any' }}" alt="Uma imagem">
+    <img [src]="urlImage + 'animals'" alt="Uma imagem 2">
+  </article>
+
+  <br><hr><br>
+
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione a classe:
+      <select class="form-select" #alertClass (change)="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-danger">Perigo</option>
+        <option value="alert-warning">Aviso</option>
+        <option value="alert-info">Info</option>
+      </select>
+      <br><br>
+
+      <div class="alert" [class]="alertClass.value" role="alert">
+        Alerta
+        <p [style.display]="alertClass.value === 'alert-danger' ? '' : 'none'">Mostra esse texto se for erro</p>
+      </div>
+    </div>
+  </article>
+
+  <br><hr><br>
+
+  <article>
+    <h3>Event Binding</h3>
+    <button class="btn btn-primary" (click)="createAlert()">Me clique!</button>
+    <br><br>
+    <input type="text" (keyup)="onkeyup($event)" (keyup.enter)="onSave(eventTarget.value)" (blur)="onSave(eventTarget.value)" #eventTarget >
+    <p>Valor atual: {{ currentValue }}</p>
+    <p>Valor salvo: {{ savedValue }}</p>
+
+    <br><br>
+
+    <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" class="p-3" [class]="isMouseOver ? 'alert-success' : 'alert-danger'">
+      O mouse está {{ isMouseOver ? 'dentro' : 'fora' }}
+    </span>
+
+  </article>
+  <br><hr><br>
+
+  <article>
+    <h3>Two way data binding</h3>
+    <app-meu-form></app-meu-form>
+  </article>
+  <br><hr><br>
+
+  <article>
+    <h3>Input/Output Properties</h3>
+    <app-input-course [nameCourse]="courseName"></app-input-course>
+    <app-output-counter [value]="countValue" (changedValue)="onCounterValueChange($event)"></app-output-counter>
+    <p>Valor: {{ countValue }}</p>
+  </article>
+  <br><hr><br>
+
+  <br><br><br>
+</section>
