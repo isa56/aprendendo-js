@@ -12,6 +12,7 @@ Repositório com meus estudos sobre JavaScript.
 | [Exercism](https://exercism.org/tracks/javascript/concepts) | [Meu perfil](https://exercism.org/profiles/isa56) |
 | [Livro Eloquente JavaScript](https://github.com/braziljs/eloquente-javascript) | [Pasta com exercícios e anotações](/eloquente-javascript/) |
 | [Curso de JavaScript e TypeScript do básico ao avançado 2022](https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/) | [Pasta do curso](/curso-js-ts/) |
+| [Cursos do Traversy Media](https://www.youtube.com/@TraversyMedia) |  |
 <!-- | [freeCodeCamp JS](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/) | -->
 
 <!-- | []() | -->

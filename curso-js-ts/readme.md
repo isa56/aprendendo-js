@@ -31,7 +31,7 @@ Link: [Curso de JavaScript e TypeScript do básico ao avançado 2022](https://ww
 <!-- | [Seção 23 - TypeScript - Decorators](/curso-js-ts/sec-23-ts-decorators/) | -->
 <!-- | [Seção 24 - TypeScript - Namespaces e Modules](/curso-js-ts/sec-24-ts-namespace-modules/) | -->
 <!-- | [Seção 25 - TypeScript - SOLID](/curso-js-ts/sec-25-ts-solid/) | -->
-<!-- | [Seção 26 - **TypeScript** - Testes com Jest](/curso-js-ts/sec-26-ts-testes-jest/) | -->
+<!-- | [Seção 26 - TypeScript - Testes com Jest](/curso-js-ts/sec-26-ts-testes-jest/) | -->
 <!-- | [Seção 27 - TypeScript e React - Pomodoro App](/curso-js-ts/sec-27-ts-react-pomodoro/) | -->
 <!-- | [Seção 28 - TypeScript - Design Patterns](/curso-js-ts/sec-28-ts-design-patterns/) | -->
 <!-- | [Seção 29 - NextJS](/curso-js-ts/sec-29-nextjs/) | -->
