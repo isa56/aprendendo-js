@@ -1,0 +1,19 @@
+<p fundoAmarelo>Texto com fundo amarelo.</p>
+<button fundoAmarelo>Botão amarelo</button>
+
+<p highlightMouse>Texto com highlight por mouse</p>
+
+<p [highlight]="'pink'" [defaultColor]="'cyan'">Texto com highlight com cores customizados</p>
+
+<div *ngIf="shouldShowCourses" >
+  Lista de cursos aqui.
+</div>
+<div *ngElse="shouldShowCourses" >
+  Não existem cursos para serem listados.
+</div>
+
+<br>
+<button (click)="shouldShowCourses = !shouldShowCourses">
+  {{ shouldShowCourses ? 'Esconder' : 'Mostrar' }} cursos
+</button>
+<br>

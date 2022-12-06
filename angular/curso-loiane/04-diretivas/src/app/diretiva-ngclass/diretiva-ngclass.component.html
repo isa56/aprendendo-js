@@ -1,0 +1,7 @@
+<ul>
+  <li>
+    <i class="bi" style="cursor:pointer;" [ngClass]="myFavorite ? 'bi-star-fill' : 'bi-star'"
+      (dblclick)="myFavorite = !myFavorite"></i>
+    {{ myFavorite ? 'Favorito' : 'Não favorito' }}
+  </li>
+</ul>

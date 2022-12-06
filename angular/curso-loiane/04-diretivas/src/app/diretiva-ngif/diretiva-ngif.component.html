@@ -1,1 +1,7 @@
-<p>diretiva-ngif works!</p>
+<div *ngIf="courses.length > 0 && shouldShowCourses">
+  <h4>Lista de cursos</h4>
+</div>
+<div *ngIf="courses.length === 0 || !shouldShowCourses">
+  <h4>Não há cursos cadastrados</h4>
+</div>
+<button class="btn btn-primary" (click)="toggleCourseShow()">{{ shouldShowCourses ? 'Esconder' : 'Mostrar' }} cursos</button>
