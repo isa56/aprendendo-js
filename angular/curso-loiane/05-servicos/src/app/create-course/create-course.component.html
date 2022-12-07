@@ -1,0 +1,10 @@
+<p>Compartilhando um serviço:</p>
+
+<input type="text" #courseInput>
+<button (click)="addCourse(courseInput.value)">Adicionar</button>
+
+<ul>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+
+<hr>

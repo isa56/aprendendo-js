@@ -3,7 +3,7 @@
 - [Video no YouTube](https://www.youtube.com/watch?v=fBNz5xF-Kx4);
 - [Repositório oficial](https://github.com/bradtraversy/node_crash_course);
 
-- [Exemplos de utilização de bibliotecas padrão (path e file system) em `intro/reference/`](/nodejs-crash-course/intro/reference/);
+- [Exemplos de utilização de bibliotecas padrão (path e file system) em `intro/reference/`](/node/nodejs-crash-course/intro/reference/);
 
 ## Introdução ao Node.js
 
