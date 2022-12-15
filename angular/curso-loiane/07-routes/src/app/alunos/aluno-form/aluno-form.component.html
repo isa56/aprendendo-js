@@ -1,0 +1,17 @@
+<h3>Formulário de aluno</h3>
+<div>
+  <div class="input-field" *ngIf="aluno">
+    <input type="text" id="id" [(ngModel)]="aluno.id" disabled>
+    <label for="id" class="active">#</label>
+  </div>
+
+  <div class="input-field">
+    <input type="text" id="nome" placeholder="Nome" [(ngModel)]="aluno!.nome" (input)="onInput()">
+    <label for="nome" class="active">Nome</label>
+  </div>
+
+  <div class="input-field">
+    <input type="text" id="email" placeholder="E-mail" [(ngModel)]="aluno!.email">
+    <label for="email" class="active" a>E-mail</label>
+  </div>
+</div>
